@@ -39,6 +39,7 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
+    @Column(name = "deleted", nullable = false)
     private boolean deleted = Boolean.FALSE;
 
     @OneToMany
