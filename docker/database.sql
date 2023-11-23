@@ -28,3 +28,4 @@ ALTER TABLE users_scheme.subscription
 
 ALTER TABLE users_scheme.subscription ALTER COLUMN  subscriber_id SET NOT NULL;
 ALTER TABLE users_scheme.subscription ALTER COLUMN  user_id SET NOT NULL;
+ALTER TABLE users_scheme.user ALTER COLUMN email SET NOT NULL;
