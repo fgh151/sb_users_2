@@ -29,3 +29,9 @@ ALTER TABLE users_scheme.subscription
 ALTER TABLE users_scheme.subscription ALTER COLUMN  subscriber_id SET NOT NULL;
 ALTER TABLE users_scheme.subscription ALTER COLUMN  user_id SET NOT NULL;
 ALTER TABLE users_scheme.user ALTER COLUMN email SET NOT NULL;
+
+-- Авторизация как правило происходит по почте и паролю.
+CREATE UNIQUE INDEX IDX_user_email ON users_scheme.user (email);
+CREATE UNIQUE INDEX IDX_user_gender ON users_scheme.user (gender);
+-- Ускоряет выборку по связанным моделям
+CREATE INDEX IDX_subscribers ON users_scheme.subscription (user_id, subscriber_id);
