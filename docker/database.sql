@@ -9,6 +9,12 @@ CREATE TABLE users_scheme.user
     "last_name"   varchar(255),
     "father_name" varchar(255),
     gender varchar(255) NOT NULL DEFAULT 'FEMALE',
+    avatar_url varchar(255),
+    about text,
+    hard_skills text,
+    nikname varchar(255),
+    phone varchar(255),
+    deleted bool NOT NULL DEFAULT false,
     "birthday"    timestamp,
     "created_at"  timestamp DEFAULT now()
 );

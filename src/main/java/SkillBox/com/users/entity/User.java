@@ -36,6 +36,27 @@ public class User {
     @Temporal(TemporalType.DATE)
     private Date birthday;
 
+    // Ссылка на картинку-аватар.
+    @Column(name = "avatar_url")
+    private String avatarUrl;
+
+    // Информация о пользователе (небольшое поле о себе)
+    @Column(columnDefinition = "TEXT")
+    private String about;
+
+    // Hard skills (навыки)
+    @Column(name = "hard_skills", columnDefinition = "TEXT")
+    private String hardSkills;
+
+    // Никнейм
+    private String nikname;
+
+    // Почта
+    private String email;
+
+    // Номер телефона.
+    private String phone;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
@@ -46,6 +67,7 @@ public class User {
     @JoinColumn(name = "user_id")
     private Set<Subscription> subscriptionSet;
 
+    //    Информация о подписках на других пользователей.
     public User(String firstName, String lastName, String fatherName, String gender, Date birthday, Date createdAt) {
         this.firstName = firstName;
         this.lastName = lastName;
